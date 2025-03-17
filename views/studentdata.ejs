@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+</head>
+<body>
+    <h1>Here is all the students data</h1>
+    <table border="black">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Phone No</td>
+                <td>City</td>
+                <td>State</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% for (student of studentData) { %>
+                <tr>
+                    <td><%= student.id %></td>
+                    <td><%= student.name %></td>
+                    <td><%= student.email %></td>
+                    <td><%= student.phoneNo %></td>
+                    <td><%= student.city %></td>
+                    <td><%= student.state %></td>
+                    <td>
+                        <form action="/student/<%= student.id %>/edit" method="get">
+                            <button>Edit Student</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

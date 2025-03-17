@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <table border="black">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (user of users) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <form action="/user/<%= user.id %>/edit" method="get">
+                            <button>Edit User</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="3">Total No Of Active Users : <%= count %></th>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
