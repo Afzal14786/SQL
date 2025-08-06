@@ -60,20 +60,24 @@ Using a DBMS offers significant advantages over traditional file-based systems:
         -   Customer change the **_phone number_** and this change is appeared only in **_saving-account_** records but not elsewhere in the **file** or **system**.
 
 
--   **Enforces Data Integrity:** It means that it ensures that the data is accurate and consistent through consistency constraints (Rules).   
-    **Example :**  
+-   **Enforces Data Integrity:**  
     
     ![data integrity](./Public/static/data_integrity.png)
+    It means that it ensures that the data is accurate and consistent through consistency constraints (Rules).   
+    **Example :**  
+    
     -   _Ensuring a user's age is a positive number_. **(age < 0)**.
     -   The **_balance_** of a bank account may never fall below a fixed amount. say, **$25**.
     -   **_Studnt of arts_**, cannot take books for **_computer science_** library.
 
 -   **Improves Data Security:**  
+    
+    ![data security](./Public/static/data_security.png)
+
     -   Provides robust mechanisms for authentication and authorization, restricting access to sensitive data.  
     -   Not every user of the database system should be able to access all the data.  
     **Example : In a Banking System, (Payroll)**  
         
-        ![data security](./Public/static/data_security.png)
         -   _The **payroll team** is allowd to see only that part of the **database** that has information about various **bank employees**_.  
 
 -   **Supports Concurrent Access:**  
