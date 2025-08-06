@@ -46,12 +46,52 @@ The primary goal of a DBMS is to provide an environment that is both **convenien
 
 Using a DBMS offers significant advantages over traditional file-based systems:
 
--   **Controls Data Redundancy:** By centralizing data, a DBMS avoids unnecessary duplication of data across different files.
--   **Enforces Data Integrity:** It ensures that data is accurate and consistent through rules and constraints _(e.g., ensuring a user's age is a positive number)_.
--   **Improves Data Security:** Provides robust mechanisms for authentication and authorization, restricting access to sensitive data.
--   **Supports Concurrent Access:** Allows multiple users to access and modify the data simultaneously without interfering with each other (concurrency control).
--   **Provides Backup and Recovery:** Offers tools to back up data periodically and recover it in case of system failure.
--   **Enables Data Independence:** Separates the application logic from the physical data storage, meaning you can change the storage structure without having to modify the application code.
+-   **Controls Data Redundancy & Inconsistency:**  
+    
+    ![redundency and inconsisteny](./Public/static/redundency_inconsisteny.png)
+    -   Since different programmers create the _files_ and _application programs_ over a long period, and verious files are likely to have different **file structures** and the program may be written in different **programming languages**.
+    -   It is highley possible that the same information may be duplicated in more than one files or saveral places.  
+    **Example :**  
+
+        -   The _address_ and the _phone number_ of a perticular **customer** may be apper in a file that consist of **_saving-account_** record and in a file that consist of **_checking-account_** record . Becuase of the same information store in two different files, so this **_redundency_** leads to **higher storage** and **access cost**.  
+    -   Also it may lead to data **inconsisteny** that is the various copies of the same data, may no longer agree.  
+    **Example :**  
+
+        -   Customer change the **_phone number_** and this change is appeared only in **_saving-account_** records but not elsewhere in the **file** or **system**.
+
+
+-   **Enforces Data Integrity:** It means that it ensures that the data is accurate and consistent through consistency constraints (Rules).   
+    **Example :**  
+    
+    ![data integrity](./Public/static/data_integrity.png)
+    -   _Ensuring a user's age is a positive number_. **(age < 0)**.
+    -   The **_balance_** of a bank account may never fall below a fixed amount. say, **$25**.
+    -   **_Studnt of arts_**, cannot take books for **_computer science_** library.
+
+-   **Improves Data Security:**  
+    -   Provides robust mechanisms for authentication and authorization, restricting access to sensitive data.  
+    -   Not every user of the database system should be able to access all the data.  
+    **Example : In a Banking System, (Payroll)**  
+        
+        ![data security](./Public/static/data_security.png)
+        -   _The **payroll team** is allowd to see only that part of the **database** that has information about various **bank employees**_.  
+
+-   **Supports Concurrent Access:**  
+    
+    ![concurrent access](./Public/static/concurrent_access.png)
+    -   _Concurrent Access_ means that when multiple users access the same data from **database**, from **_different locations_**, or **_same time_** or at the **_same moments_**.  
+
+
+-   **Provides Backup and Recovery:**  
+    
+    ![backup and recovery image](./Public/static/backup_recovery.png)
+    Offers tools to back up data **periodically** and recover it in case of **system failure**.  
+    In many applications, it;s crucila that, if a failure occures, the data must be *restore* to it's *previous state* .
+
+-   **Enables Data Independence:**  
+    
+    ![data independence](./Public/static/data_independence.png)
+    Separates the **application logic** from the **physical data storage**, meaning you can change the __storage structure__ without having to modify the _application code_.
 
 ## 3. Core Components of a DBMS Environment
 
