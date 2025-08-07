@@ -122,6 +122,9 @@ This has been the dominant model for decades. Data is stored in a structured for
 -   **Query Language:** Primarily uses **SQL (Structured Query Language)**.
 -   **Examples:** **[MySQL](./MYSQL.md)**, **PostgreSQL**, Microsoft SQL Server, Oracle Database.
 
+**For More Information About Relational Database, Follow The Following Link:**  
+_**[RDBMS](./README-RDBMS.md)**_
+
 ### NoSQL DBMS
 "NoSQL" stands for "Not Only SQL". This category emerged to handle the large volumes, high velocity, and unstructured data of modern web applications (Big Data). They are generally more flexible and scalable than RDBMS.
 
