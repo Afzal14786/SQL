@@ -1,5 +1,5 @@
 # Relational Database Management System (RDBMS)  
-An **RDBMS**, or **Relational Database Management System**, is a type of software used to _create_, _manage_, and _interact_ with __relational databases__. 
+A **RDBMS**, or **Relational Database Management System**, is a type of software used to _create_, _manage_, and _interact_ with __relational databases__. 
 
 **RDBMS** is based on the **relational model**.  
 
