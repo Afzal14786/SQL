@@ -180,3 +180,122 @@ _Before we begin with database schema, we should have a clear understanding betw
 
 
 ## Keys  
+
+A relation always has a field which uniquely identify each row in a relation or table . A **value** or **set of values** which is *uniquely identify* throughout all of the rows of the table . Each row is distinct and can be identified by the values of one or more of it's attributes called **key** .  
+
+A key allow us to identify a set of attributes or fields that suffices to distinguish entities from each other .  
+
+**The keys can categorized into :**  
+1. [Super Key](#super-key)
+2. [Candidate Key](#candidate-key)
+3. [Primary Key](#primary-key)
+4. [Alternet Key](#alternet-key)
+5. [Composite Key](#composite-key)
+6. [Foregin Key](#foregin-key)
+
+
+### Super Key  
+A Super is an attribute or set of attributes that help us to identify each row uniquely in the relation or table .  
+
+**Example:** We have a cutomer table where we have following attributes :  
+
+-   **customer_id**
+-   **customer_name**
+-   **customer_email_id**
+-   **customer_address**
+-   **customer_phoneNo**  
+... *and so on*  
+
+Now, in the above attributes, the **_customer_id_** is one of the **super key** because it can easily identify each row or tuple in a table or relation uniquely.  
+
+Similar to *customer_id*, the combination or **_customer_id_** & **_customer_name_** can form **super key** that can identify each row uniquely .  
+
+With the same example if you try to consider **_customer_name_** as a **super key**, they it would be wrong because it is highly possibly that two customer's have same name . So the attribute **customer_name** alone cannot be a _super key_ .  
+
+### Candidate Key  
+Minimal Super Keys are called **Candidate Keys** . Means every candidate key is a super key, but not all super key can be a candidat key.  
+
+Using a candidate key, we can uniquely determine the values of all other attributes in a table.   
+
+It is possible that several distinct sets of attributes could serve as a candidate key. Suppose that a combination of **name** and **dept name** is sufficient to distinguish among members of the **instructor relation**. Then, both **{ID}** and **{name, dept name}** are **candidate keys**. Although the attributes ID and name together can distinguish *instructor tuples*, their combination, **{ID,
+name}**, does not form a *candidate key*, since the attribute **ID** alone is a **candidate key**. 
+
+**Features of Candidate Key :**  
+-   A candidate has unique values for every rows in a table .
+-   Every candidate key is a super key, but not all super keys qualify as candidate keys . 
+-   A candidate key can contain null values, but this depands on the database's design and constraints .  
+
+- The [primary key](#primary-key) is chosen from the set of candidate keys.
+
+### Primary Key  
+
+When one or more number of attributes uniquely identify the row is called primary key . It cannot contain any **null values** or it is **unique** .  
+
+The **primary key** should be chosen such that it's attribute values are never, or very rarely changed .  
+
+**Example:**  
+
+The address of a customer cannot be a primary number because the address can be change over time but the **social-security number**, like **aadhar-card**, **pan-card** are never change so they can be a primary key .
+
+### Alternet Key
+The alternet key of any table are those candidate keys which are not currently selected as primary key .  
+
+**Example:**  The combination of **roll_no** and **name** as *candidate key* . *roll_no* alone is a **primary key** and the *name* alone is an *alternet key* .  
+
+### Composite Key  
+
+A primary key that is made up of more than one attributes known as a composite key .  
+
+**Example:** _Project(P_id, E_id, E_name, Hours_Work)_  
+
+### Foregin Key  
+
+The attribute of one table is **_referance_** a *primary key* of the another table is called a **foregin key** .  
+
+Foregin key provide a method for **maintaining integrity** and for **navigation between different instances** of tables .  
+
+Foregin key's values must be matched by the corresponding primary key values .  
+
+**Let Say:**  A relation r1, may include among it's attributes, the primary key of an other-relation say r2 . This attribute called a **foregin key** from r1, referencing r2 .  
+
+-   The relation r1, is also called the referencing relation of the foregin key dependency .
+-   The relation r2, is called the referenced relation of the foregin key . 
+
+**Example:**  
+the attribute _**dept_name**_ in relation instructor is a foregin key ***depart-ment***, since ***dept_name*** is the primary key of ***department*** .  
+
+The domain value of the **primary_key** and the **foregin_key** must be same .  
+
+## Database Schema  
+
+**Datbase Schema** is the logical design of the database, and the **database instanse**, which is a snapshot of the data in the database at a given instant in time .  
+
+**Relation Schema** is the design of a relation, or table . It consist of a list of attributes and their corresponding domains .  
+
+The schema of a relation generally does not change, but the instanse of a relation update over time .  
+
+**Example :**  Let say the _department_ relation, The schema of the department relation is : **_department(dept_name, building, budget)_** and let say the _instructor_ relation, the schema for instructor relation will be : ___instructor(id, name, dept_name, salary)___  
+
+If we see, the **dept_name** is same in both the ***instructor schema*** and the ***department schema*** .  
+
+Using this type of common attributes in two different relations schemas is one way of relating tuples of distinct relations .  
+
+## Relational Query Language  
+
+A query language is a language in which a user requests information form the database .  
+
+There are two types of **query languages** :  
+-   Procedural 
+-   Non-Procedural
+
+**Procedural Language**  
+In procedural query language the user instruct the system to perform sequence of operations on the database to compute the desired result .  
+
+**Non-Procedural Language**  
+In Non-Procedural Query Language, the user describe the desired information without giving a specific procedure for obtaining that information .  
+
+Most RDBMS offer a query language that include the element of both, **the procedural or non-procedural approaches** .  
+
+***Query Languages :***   
+-   **The Relation Algebra** is a *procedural language*,
+-   **The Tuple Relation Calculus** and **The Domain Relation Calculus** are *non-procedural language* .  
